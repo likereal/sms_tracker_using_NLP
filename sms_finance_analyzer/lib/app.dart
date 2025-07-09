@@ -3,6 +3,7 @@ import 'features/dashboard/presentation/pages/welcome_page.dart';
 import 'package:sms_finance_analyzer/features/auth/presentation/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'features/dashboard/presentation/pages/home_page.dart';
+import 'features/dashboard/presentation/pages/dashboard_home_page.dart';
 
 class SMSFinanceAnalyzerApp extends StatelessWidget {
   const SMSFinanceAnalyzerApp({super.key});
@@ -33,9 +34,10 @@ class AuthGate extends StatelessWidget {
           return const Scaffold(body: Center(child: CircularProgressIndicator()));
         }
         if (snapshot.hasData) {
-          return MyHomePage();
+          return DashboardHomePage();
         }
-        return LoginPage();
+        // Show WelcomePage before login
+        return WelcomePage();
       },
     );
   }

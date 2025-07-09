@@ -1,3 +1,4 @@
+// This file contains the ExpensesPage, moved from the old MyHomePage in home_page.dart
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
@@ -5,7 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:sms_finance_analyzer/main.dart' show StockPage;
 
-// Rename MyHomePage to ExpensesPage
 class ExpensesPage extends StatefulWidget {
   const ExpensesPage({super.key});
 
@@ -502,4 +502,4 @@ class FinancialSMS {
     required this.description,
     required this.category,
   });
-}
+} 

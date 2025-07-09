@@ -13,17 +13,32 @@ class _LoginPageState extends State<LoginPage> {
   String? _error;
 
   Future<void> _signInWithEmail() async {
+    setState(() => _error = null);
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+      if (mounted) Navigator.of(context).pop(); // Remove loading
+      if (mounted) Navigator.of(context).pop(); // Pop LoginPage, AuthGate will show home
     } catch (e) {
+      if (mounted) Navigator.of(context).pop(); // Remove loading
       setState(() => _error = e.toString());
     }
   }
 
   Future<void> _signInWithGoogle() async {
+        setState(() => _error = null);
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) return; // cancelled
@@ -33,7 +48,10 @@ class _LoginPageState extends State<LoginPage> {
         idToken: googleAuth.idToken,
       );
       await FirebaseAuth.instance.signInWithCredential(credential);
+      if (mounted) Navigator.of(context).pop(); // Remove loading
+      if (mounted) Navigator.of(context).pop();
     } catch (e) {
+      if (mounted) Navigator.of(context).pop(); // Remove loading
       setState(() => _error = e.toString());
     }
   }
