@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './expenses_page.dart';
+import './community_page.dart';
 
 class DashboardHomePage extends StatelessWidget {
   const DashboardHomePage({super.key});
@@ -62,9 +63,9 @@ class DashboardHomePage extends StatelessWidget {
                     icon: Icons.people,
                     label: 'Community',
                     onTap: () {
-                      // TODO: Implement Community page
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Community page coming soon!')),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const CommunityPage()),
                       );
                     },
                   ),
