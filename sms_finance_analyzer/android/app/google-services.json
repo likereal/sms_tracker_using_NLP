@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133052518203",
+    "project_id": "fin-app-f8599",
+    "storage_bucket": "fin-app-f8599.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133052518203:android:6c2c6ba0af7467a7d3311e",
+        "android_client_info": {
+          "package_name": "com.example.sms_finance_analyzer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB05_lYjSFD_9NDnBLOpIvc5zKi51OFzS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

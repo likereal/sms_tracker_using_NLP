@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart'; // Add this import
-import 'app.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:async'; // Added for Timer
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Add this line
-  await Firebase.initializeApp();            // Add this line
-  runApp(const SMSFinanceAnalyzerApp());
-}
 
 class StockPage extends StatefulWidget {
   const StockPage({super.key});
@@ -32,7 +23,7 @@ class _StockPageState extends State<StockPage> {
     });
     try {
       // Replace with your backend endpoint and pass the symbol as a query param
-      final response = await http.get(Uri.parse('https://api-deploy-render-b0n9.onrender.com/ltp?symbol=$symbol'));
+      final response = await http.get(Uri.parse('https://api-deploy-render-wihd.onrender.com/ltp?symbol=$symbol'));
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
